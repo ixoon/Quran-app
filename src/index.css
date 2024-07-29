@@ -1,13 +1,185 @@
-body {
+html, body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  overflow-x: hidden; 
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.select-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+.submit-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.surah-text {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 40px; 
+  line-height: 1.8;
+  direction: rtl;
+  white-space: normal;
+  font-family: 'Scheherazade', serif;
+}
+
+.ayah {
+  display: inline-block;
+  margin-right: 10px; 
+  vertical-align: top; 
+}
+
+p {
+  font-size: 16px;
+  color: #e74c3c; 
+}
+
+.error {
+  color: #e74c3c;
+}
+
+.header-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.header-container h2 {
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #007BFF;
+  background-color: #ffffff;
+  border: 2px solid #007BFF;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  text-align: center;
+  text-transform: uppercase; 
+}
+
+.header-container h2:hover {
+  background-color: #007BFF;
+  color: #ffffff;
+  transform: scale(1.1);
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.content-container {
+  text-align: center;
+  margin-top: 2rem;
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateY(-20px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .select-container {
+    flex-direction: column;
+  }
+
+  select, .submit-btn {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .surah-text {
+    font-size: 20px; 
+  }
+
+  .header-container h2 {
+    font-size: 14px;
+  }
+
+  .content-container {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 5px;
+  }
+
+  .select-container {
+    flex-direction: column;
+  }
+
+  select, .submit-btn {
+    width: 100%;
+    margin: 5px 0;
+    font-size: 14px;
+  }
+
+  .surah-text {
+    font-size: 18px; 
+  }
+
+  .header-container h2 {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .content-container {
+    margin-top: 0.5rem;
+  }
 }
