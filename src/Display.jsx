@@ -150,7 +150,7 @@ function Display() {
         setLoading(true);
         setError(null);
         try {
-            const response = await fetch(`https://api.alquran.cloud/v1/surah/${surah}${language === "ar" ? "" : `/${language}`}`);
+            const response = await fetch(`http://api.alquran.cloud/v1/surah/${surah}${language === "ar" ? "" : `/${language}`}`);
             if (!response.ok) {
                 throw new Error("Error");
             }
